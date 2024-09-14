@@ -9,13 +9,13 @@
 <body>
     <div class="container">
         <h1>Gerenciador de Contas</h1>
-        <form>
+        <form id="billPaid">
             <div class="form-group">
              <label for="nomeConta" >Nome da conta:</label>
                 <input type="text" id="nomeConta" placeholder="Ex: Nome da Conta" required>
             </div>
             <div class="form-group">
-                <label for="ValorConta">Valor (R$):</label>
+                <label for="valorConta">Valor (R$):</label>
                 <input type="number" id="valorConta" placeholder="Ex: 999.99" step="0.01" required>  
             </div>
             <div class="form-group">
@@ -29,13 +29,25 @@
                     <option value="GastosVariaveis">Gastos Variaveis</option>
                 </select>
             </div>
-                <button type="submit" class="btn" id="adicionarConta">Adicionar</button>
+                <button type="submit" class="btn">Adicionar</button>
         </form>
 
-        <ul class="task-list" id="listaDeContas">
-            
-        </ul>
     </div>
-    <script src="components/JavaScript/script.js"></script>
+
+    <table>
+        <thead>
+            <th>Id</th> 
+            <th>Nome</th> 
+            <th>Valor</th> 
+            <th>Vencimento</th> 
+            <th>Tipo de conta</th>
+        </thead>
+        <tbody id="lista-contas">
+           
+        </tbody>
+    </table>
+
+
+    <script src="/components/JavaScript/script.js"></script>
 </body>
 </html>

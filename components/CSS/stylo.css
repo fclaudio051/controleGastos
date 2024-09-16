@@ -18,3 +18,7 @@ label{
 #categoriaConta {
     width: 150px;
 }
+
+table{
+    border-spacing: 20px;
+}

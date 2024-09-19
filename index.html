@@ -11,44 +11,45 @@
         <h1>Gerenciador de Contas</h1>
         <form id="billPaid">
             <div class="form-group">
-             <label for="nomeConta" >Nome da conta:</label>
-                <input type="text" id="nomeConta" placeholder="Ex: Nome da Conta" required>
+                <label for="nomeConta">Nome da conta:</label>
+                <input type="text" id="nomeConta" name="nomeConta" placeholder="Ex: Nome da Conta" required>
             </div>
             <div class="form-group">
                 <label for="valorConta">Valor (R$):</label>
-                <input type="number" id="valorConta" placeholder="Ex: 999.99" step="0.01" required>  
+                <input type="number" id="valorConta" name="valorConta" placeholder="Ex: 999.99" step="0.01" required>
             </div>
             <div class="form-group">
                 <label for="vencimentoConta">Data de vencimento:</label>
-                <input type="date" id="vencimentoConta" required>
+                <input type="date" id="vencimentoConta" name="vencimentoConta" required>
             </div>
             <div class="form-group">
                 <label for="categoriaConta">Categoria: </label>
-                <select id="categoriaConta" required>
-                    <option>Gastos Fixos</option>
-                    <option>Gastos Variaveis</option>
+                <select id="categoriaConta" name="categoriaConta" required>
+                    <option value="Gastos Fixos">Gastos Fixos</option>
+                    <option value="Gastos Variaveis">Gastos Variáveis</option>
                 </select>
             </div>
-                <button type="submit" class="btn">Adicionar</button>
+            <button type="submit" class="btn">Adicionar</button>
         </form>
-
     </div>
 
     <table>
         <thead>
-            <th>Id</th> 
-            <th>Nome</th> 
-            <th>Valor</th> 
-            <th>Vencimento</th> 
-            <th>Tipo de conta</th>
-            <th>status</th>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Vencimento</th>
+                <th>Categoria</th>
+                <th>Status</th>
+                <th>Ação</th>
+            </tr>
         </thead>
         <tbody id="lista-contas">
-           
+            
         </tbody>
     </table>
 
-
-    <script src="/components/JavaScript/script.js"></script>
+    <script type="module" src="./components/modules/main.js"></script>
 </body>
 </html>

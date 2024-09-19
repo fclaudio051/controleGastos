@@ -22,3 +22,7 @@ label{
 table{
     border-spacing: 20px;
 }
+
+.pago {
+    text-decoration: line-through;
+}

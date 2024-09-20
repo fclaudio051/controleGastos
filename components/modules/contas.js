@@ -28,10 +28,33 @@ export function adicionarContaNaTabela(conta) {
         <td>
             <input type="checkbox" ${conta.status === 'pago' ? 'checked' : ''} data-id="${conta.id}">
         </td>
+        <td>
+            <button data-id="${conta.id}" class="btn-deletar">Deletar</button>
+        </td>
     `;
 
     const checkbox = tr.querySelector('input[type="checkbox"]');
     checkbox.addEventListener('change', () => marcarPagamento(checkbox, conta.id));
 
     document.getElementById("lista-contas").appendChild(tr);
+}
+
+document.getElementById("lista-contas").addEventListener("click", function(event) {
+    if (event.target.classList.contains("btn-deletar")) {
+        const id = parseInt(event.target.dataset.id, 10);
+        deletarConta(id);
+    }
+});
+
+function deletarConta(id) {
+    
+    let contas = JSON.parse(localStorage.getItem('contas')) || [];
+    contas = contas.filter(conta => conta.id !== id);
+    localStorage.setItem('contas', JSON.stringify(contas));
+    
+    
+    const linha = document.querySelector(`button[data-id="${id}"]`).closest("tr");
+    if (linha) {
+        linha.remove();
+    }
 }
